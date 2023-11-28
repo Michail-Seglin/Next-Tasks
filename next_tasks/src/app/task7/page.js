@@ -13,5 +13,10 @@ export default function Task7() {
         </p>
         <button onClick={() => setFlag(true)}>Показать текст</button>
         <button onClick={() => setFlag(false)}>Убрать текст</button>
-    </>)
+
+        <p>{flag ? 'Hello' : ''}
+        </p>
+
+    </>
+    )
 }
