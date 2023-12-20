@@ -2,6 +2,13 @@
 import Calculator from "./Calculator"
 
 export default function Task16() {
+
+    const [value, setValue] = useState('')
+    const arr1 = [0, 1, 2, 3];
+    const arr2 = [4, 5, 6, 7];
+    const arr3 = [8, 9, '+', '*'];
+    const arr4 = ['/', '-', '.', '00'];
+
     return (
         <>
             <p>
@@ -24,10 +31,7 @@ export default function Task16() {
             <input type="button" value={'/'} onClick={e => setValue(value + e.target.value)} />
             <input type="button" value={'-'} onClick={e => setValue(value + e.target.value)} />
 
-            <button>Сложение</button>
-            <button>вычитание</button>
-            <button>Умножение</button>
-            <button>Деление</button>
+            
             <p></p>
         </>
     )
