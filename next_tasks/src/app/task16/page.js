@@ -1,5 +1,7 @@
 'use client'
+import Link from "next/link";
 import Calculator from "./Calculator"
+import { useState } from "react";
 
 export default function Task16() {
 
@@ -17,32 +19,34 @@ export default function Task16() {
                 компонента. page.js: Содержит калькулятор. Calculator.js: Принимает введенные
                 данные и выполняет математические операции для расчета итогового результата.
             </p>
-            
-                    <div className={style.display}>
-                        <input type="text" value={value} />
-                    </div>
-                    <div className={style.calculator}>
-                        <div>
-                            {arr1.map((el) => <input type="button" value={el} onClick={e => setValue(value + e.target.value)} />)}
-                        </div>
-                        <div>
-                            {arr2.map((el) => <input type="button" value={el} onClick={e => setValue(value + e.target.value)} />)}
-                        </div>
-                        <div>
-                            {arr3.map((el) => <input type="button" value={el} onClick={e => setValue(value + e.target.value)} />)}
-                        </div>
-                        <div>
-                            {arr4.map((el) => <input type="button" value={el} onClick={e => setValue(value + e.target.value)} />)}
-                        </div>
-                        <div>
-                            <input type="button" value={"DE"} onClick={e => setValue(Calculator(value.slice(0, -1)))} />
-                            <input type="button" value={"AC"} onClick={e => setValue('')} />
-                            <input className={style.equal} type="button" value={"="} onClick={e => setValue(Calculator(value))} />
 
-                        </div>
-                    </div>
-            
-            <p></p>
+            <div className={style.display}>
+                <input type="text" value={value} />
+            </div>
+            <div className={style.calculator}>
+                <div>
+                    {arr1.map((el) => <input type="button" value={el} onClick={e => setValue(value + e.target.value)} />)}
+                </div>
+                <div>
+                    {arr2.map((el) => <input type="button" value={el} onClick={e => setValue(value + e.target.value)} />)}
+                </div>
+                <div>
+                    {arr3.map((el) => <input type="button" value={el} onClick={e => setValue(value + e.target.value)} />)}
+                </div>
+                <div>
+                    {arr4.map((el) => <input type="button" value={el} onClick={e => setValue(value + e.target.value)} />)}
+                </div>
+                <div>
+                    <input type="button" value={"DE"} onClick={e => setValue(Calculator(value.slice(0, -1)))} />
+                    <input type="button" value={"AC"} onClick={e => setValue('')} />
+                    <input className={style.equal} type="button" value={"="} onClick={e => setValue(Calculator(value))} />
+
+                </div>
+            </div>
+
+            <p>
+                <Link href='/'>back</Link>
+            </p>
         </>
     )
 }
